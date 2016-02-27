@@ -8,14 +8,14 @@ def intro():
     return input().split()
 
 
-def generateRolls(rollsNr, sides):
+def generate_rolls(rolls_nr, sides):
     answer = tuple()
-    while (rollsNr > 0):
+    while rolls_nr > 0:
         answer = answer + (randint(1, sides),)
-        rollsNr -= 1
+        rolls_nr -= 1
     return answer
 
 
 if __name__ == '__main__':
     x = intro()
-    print(generateRolls(int(x[0]), int(x[1])))
+    print(generate_rolls(int(x[0]), int(x[1])))
