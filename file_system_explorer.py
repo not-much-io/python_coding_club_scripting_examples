@@ -11,10 +11,7 @@ def find_in_tree(root_dir, extension):
     found_files = []
 
     for dirName, subdirList, fileList in os.walk(root_dir):
-        files_in_current_directory = file_with_extension_in_directory(dirName, extension)
-
-        for file in files_in_current_directory:
-            found_files.append(file)
+        found_files += file_with_extension_in_directory(dirName, extension)
 
     return found_files
 
