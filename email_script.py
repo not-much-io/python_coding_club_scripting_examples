@@ -26,7 +26,7 @@ def send_email(conf, subject, body):
 def send_email_to_me(subject, body):
     conf = {"fromEmail": "kristo.koert@gmail.com",
             "toEmail": "timo@tdl.ee",
-            "password": "lein_new_password"}
+            "password": ""}
     send_email(conf, subject, body)
 
 if __name__ == '__main__':

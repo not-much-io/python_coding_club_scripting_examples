@@ -1,5 +1,6 @@
 from random import randint
 
+
 def intro():
     print("Enter the amount of times you wish to roll the dice and how many sides the dice has")
     print("Sample input \"2 4\" Would produce : (3, 1)")
@@ -9,10 +10,11 @@ def intro():
 
 def generateRolls(rollsNr, sides):
     answer = tuple()
-    while(rollsNr > 0):
+    while (rollsNr > 0):
         answer = answer + (randint(1, sides),)
         rollsNr -= 1
     return answer
+
 
 if __name__ == '__main__':
     x = intro()
