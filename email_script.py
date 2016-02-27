@@ -23,6 +23,12 @@ def send_email(conf, subject, body):
     server.quit()
 
 
+def send_email_to_me(subject, body):
+    conf = {"fromEmail": "kristo.koert@gmail.com",
+            "toEmail": "timo@tdl.ee",
+            "password": "lein_new_password"}
+    send_email(conf, subject, body)
+
 if __name__ == '__main__':
     configuration = {"fromEmail": "kristo.koert@gmail.com",
                      "toEmail": "timo@tdl.ee",
