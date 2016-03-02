@@ -1,2 +1,1 @@
-# Scripting Examples
-
+## Examples and Challenges for CodeClub: Python scripting themed meetup 
