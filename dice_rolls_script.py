@@ -2,10 +2,10 @@ from random import randint
 
 
 def intro():
-    print("Enter the amount of times you wish to roll the dice and how many sides the dice has")
-    print("Sample input \"2d4\" Could produce : (3, 1) the sum would be 4")
-    print("Enter input : ")
-    return input().lower().split("d")
+    print("Enter the amount of times you wish to roll the dice and how many sides the dice has"
+          "\nSample input '2d4' Could produce : (3, 1) the sum would be 4 "
+          "\nEnter input : ", end="")
+    return input().split("d")
 
 
 def generate_rolls(nr_dice, dice_sides):

@@ -3,33 +3,30 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 
-def send_email(conf, subject, body):
-    from_addr = conf['fromEmail']
-    to_addr = conf['toEmail']
-    password = conf['password']
+def build_email(conf, subject, body):
+    email = MIMEMultipart()
+    email['From'] = conf['fromEmail']
+    email['To'] = conf['toEmail']
+    email['Subject'] = subject
+    email.attach(MIMEText(body, 'plain'))
+    return email.as_string()
 
-    msg = MIMEMultipart()
-    msg['From'] = from_addr
-    msg['To'] = to_addr
-    msg['Subject'] = subject
 
-    msg.attach(MIMEText(body, 'plain'))
-
+def send_email(conf, email):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login(from_addr, password)
-    text = msg.as_string()
-    server.sendmail(from_addr, to_addr, text)
+    server.login(conf['fromEmail'],
+                 conf['password'])
+    server.sendmail(conf['fromEmail'],
+                    conf['toEmail'],
+                    email)
     server.quit()
 
 
-def send_email_to(targer, subject, body):
-    raise NotImplementedError
-
-
 if __name__ == '__main__':
-    configuration = {"fromEmail": "",
+    configuration = {"fromEmail": "gatethor@gmail.com",
                      "toEmail": "",
-                     "password": ""}
+                     "password": "Heimdall"}
 
-    send_email(configuration, "Subject!", "Body!")
+    example_email = build_email(configuration, "Subject!", "Body!")
+    send_email(configuration, example_email)

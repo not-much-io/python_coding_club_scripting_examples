@@ -1,6 +1,6 @@
 from time import sleep
 from requests import get
-from email_script import send_email_to
+# from email_script import send_email_to
 import socket
 
 
@@ -17,7 +17,7 @@ if __name__ == '__main__':
         body = "Last ip was: " + last_ip
 
         if curr_ip != last_ip:
-            send_email_to("me", title, body)
+            # send_email_to("me", title, body)
             last_ip = curr_ip
             print("Sent new IP: ", curr_ip)
         else:
