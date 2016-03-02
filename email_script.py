@@ -23,15 +23,13 @@ def send_email(conf, subject, body):
     server.quit()
 
 
-def send_email_to_me(subject, body):
-    conf = {"fromEmail": "kristo.koert@gmail.com",
-            "toEmail": "timo@tdl.ee",
-            "password": ""}
-    send_email(conf, subject, body)
+def send_email_to(targer, subject, body):
+    raise NotImplementedError
+
 
 if __name__ == '__main__':
-    configuration = {"fromEmail": "kristo.koert@gmail.com",
-                     "toEmail": "timo@tdl.ee",
+    configuration = {"fromEmail": "",
+                     "toEmail": "",
                      "password": ""}
 
     send_email(configuration, "Subject!", "Body!")
