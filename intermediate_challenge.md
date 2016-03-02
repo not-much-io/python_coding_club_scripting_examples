@@ -3,13 +3,13 @@
 
 ## Challenge
 
-*Friend* 
+*Friend*: 
 "Damn, my hard drive is a mess!
- I have all these old movies, pictures, files and stuff all around my hard drive!
+ I have all these old movies, pictures, documents and stuff all around my hard drive!
  They are all messed up and I'm running out of space!"
 
-*You*
- "Pft, I could write a Python script to do that."
+*You*:
+ "Pft, I could write a Python script to deal with that."
 
 ## Analyzer
 
@@ -37,7 +37,7 @@ The configuration file might contain data like this:
                             "rarely_viewed"          : { "date"   : "01.01.2014",
                                                          "action" : "none"}
                           }
-    # Add more checks if you want. For modified_since, extra large files etc..
+    # Add more checks if you want. For modified_since, notify of files large than x, file types etc..
 }
 ```
 
@@ -58,7 +58,7 @@ The result file might contain data like this:
                                 "action"        : "zip",
                                 "files"         : [..],
                               },
-    etc.
+    # etc..
 }
 ```
 
@@ -72,4 +72,4 @@ python compactor.py --conf compactor_conf.json
 ```
 
 Should actually realize the processes with the parameters in the analysis results.
-If you want, add backup functionality, result transfer to an external disk etc.
+If you want, add backup functionality, result transfer to an external disk, optimize zipping etc.
